@@ -1,6 +1,12 @@
 <?xml version="1.0"?>
 <ruleset name="Zend">
     <description>GoT coding standard.</description>
+
+    <exclude-pattern>*.css</exclude-pattern>
+    <exclude-pattern>*.htm</exclude-pattern>
+    <exclude-pattern>*.html</exclude-pattern>
+    <exclude-pattern>*.js</exclude-pattern>
+
     <!-- Include some sniffs from all around the place -->
     <rule ref="Generic.Functions.FunctionCallArgumentSpacing"/>
     <rule ref="Generic.Functions.OpeningFunctionBraceBsdAllman"/>
