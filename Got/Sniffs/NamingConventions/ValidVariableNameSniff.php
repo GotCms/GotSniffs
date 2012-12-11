@@ -1,15 +1,33 @@
 <?php
 /**
+ * Got_Sniffs_NamingConventions_ValidVariableNameSniff
+ *
+ * PHP version 5
+ *
+ * @category PHP
+ * @package  CodeSniffer
+ * @author   Pierre Rambaud <pierre.rambaud86@gmail.com>
+ * @author   Marc McIntyre <mmcintyre@squiz.net>
+ * @license  http://matrix.squiz.net/developer/tools/php_cs/licence BSD Licence
+ * @link     http://rambaudpierre.fr
+ */
+
+if(class_exists('PHP_CodeSniffer_Standards_AbstractVariableSniff', TRUE) === FALSE)
+{
+    throw new PHP_CodeSniffer_Exception('Class PHP_CodeSniffer_Standards_AbstractVariableSniff not found');
+}
+
+/**
  * Got_Sniffs_NamingConventions_ValidVariableNameSniff.
  *
  * PHP version 5
  *
- * @category  PHP
- * @package   CodeSniffer
- * @author    Pierre Rambaud <pierre.rambaud86@gmail.com>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @license   http://matrix.squiz.net/developer/tools/php_cs/licence BSD Licence
- * @link      http://rambaudpierre.fr
+ * @category PHP
+ * @package  CodeSniffer
+ * @author   Pierre Rambaud <pierre.rambaud86@gmail.com>
+ * @author   Marc McIntyre <mmcintyre@squiz.net>
+ * @license  http://matrix.squiz.net/developer/tools/php_cs/licence BSD Licence
+ * @link     http://rambaudpierre.fr
  */
 
 class Got_Sniffs_NamingConventions_ValidVariableNameSniff extends PHP_CodeSniffer_Standards_AbstractVariableSniff
@@ -32,7 +50,6 @@ class Got_Sniffs_NamingConventions_ValidVariableNameSniff extends PHP_CodeSniffe
      * @param PHP_CodeSniffer_File $phpcs_file The file being scanned.
      * @param int                  $stack_ptr  The position of the current token in the
      *                                        stack passed in $tokens.
-     *
      * @return void
      */
     protected function processVariable(PHP_CodeSniffer_File $phpcs_file, $stack_ptr)
@@ -112,14 +129,14 @@ class Got_Sniffs_NamingConventions_ValidVariableNameSniff extends PHP_CodeSniffe
             {
                 // The variable lives within a class, and is referenced like
                 // this: MyClass::$_variable, so we don't know its scope.
-                $inClass = TRUE;
+                $in_class = TRUE;
             }
             else
             {
-                $inClass = $phpcs_file->hasCondition($stack_ptr, array(T_CLASS, T_INTERFACE));
+                $in_class = $phpcs_file->hasCondition($stack_ptr, array(T_CLASS, T_INTERFACE));
             }
 
-            if($inClass === TRUE)
+            if($in_class === TRUE)
             {
                 $var_name = substr($var_name, 1);
             }
@@ -219,7 +236,6 @@ class Got_Sniffs_NamingConventions_ValidVariableNameSniff extends PHP_CodeSniffe
      * @param PHP_CodeSniffer_File $phpcs_file The file being scanned.
      * @param int                  $stack_ptr  The position of the double quoted
      *                                        string.
-     *
      * @return void
      */
     protected function processVariableInString(PHP_CodeSniffer_File $phpcs_file, $stack_ptr)

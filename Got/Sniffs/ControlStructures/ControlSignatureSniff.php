@@ -1,16 +1,33 @@
 <?php
-
 /**
- * Got_Sniffs_NamingConventions_ValidVariableNameSniff.
+ * Got_Sniffs_Commenting_FileCommentSniff
  *
  * PHP version 5
  *
- * @category  PHP
- * @package   CodeSniffer
- * @author    Pierre Rambaud <pierre.rambaud86@gmail.com>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @license   http://matrix.squiz.net/developer/tools/php_cs/licence BSD Licence
- * @link      http://rambaudpierre.fr
+ * @category PHP
+ * @package  CodeSniffer
+ * @author   Pierre Rambaud <pierre.rambaud86@gmail.com>
+ * @author   Marc McIntyre <mmcintyre@squiz.net>
+ * @license  http://matrix.squiz.net/developer/tools/php_cs/licence BSD Licence
+ * @link     http://rambaudpierre.fr
+ */
+
+if(class_exists('PHP_CodeSniffer_Standards_AbstractPatternSniff', TRUE) === FALSE)
+{
+    throw new PHP_CodeSniffer_Exception('Class PHP_CodeSniffer_Standards_AbstractPatternSniff not found');
+}
+
+/**
+ * GoT_Sniffs_ControlStructures_ControlSignatureSniff.
+ *
+ * PHP version 5
+ *
+ * @category PHP
+ * @package  CodeSniffer
+ * @author   Pierre Rambaud <pierre.rambaud86@gmail.com>
+ * @author   Marc McIntyre <mmcintyre@squiz.net>
+ * @license  http://matrix.squiz.net/developer/tools/php_cs/licence BSD Licence
+ * @link     http://rambaudpierre.fr
  */
 
 class GoT_Sniffs_ControlStructures_ControlSignatureSniff extends PHP_CodeSniffer_Standards_AbstractPatternSniff

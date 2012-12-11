@@ -1,17 +1,30 @@
 <?php
 /**
- * Got_Sniffs_NamingConventions_ValidVariableNameSniff.
+ * GoT_Sniffs_WhiteSpace_ScopeClosingBraceSniff
  *
  * PHP version 5
  *
- * @category  PHP
- * @package   CodeSniffer
- * @author    Pierre Rambaud <pierre.rambaud86@gmail.com>
- * @author    Marc McIntyre <mmcintyre@squiz.net>
- * @license   http://matrix.squiz.net/developer/tools/php_cs/licence BSD Licence
- * @link      http://rambaudpierre.fr
+ * @category PHP
+ * @package  CodeSniffer
+ * @author   Pierre Rambaud <pierre.rambaud86@gmail.com>
+ * @author   Marc McIntyre <mmcintyre@squiz.net>
+ * @license  http://matrix.squiz.net/developer/tools/php_cs/licence BSD Licence
+ * @link     http://rambaudpierre.fr
  */
 
+
+/**
+ * GoT_Sniffs_WhiteSpace_ScopeClosingBraceSniff.
+ *
+ * PHP version 5
+ *
+ * @category PHP
+ * @package  CodeSniffer
+ * @author   Pierre Rambaud <pierre.rambaud86@gmail.com>
+ * @author   Marc McIntyre <mmcintyre@squiz.net>
+ * @license  http://matrix.squiz.net/developer/tools/php_cs/licence BSD Licence
+ * @link     http://rambaudpierre.fr
+ */
 class GoT_Sniffs_WhiteSpace_ScopeClosingBraceSniff implements PHP_CodeSniffer_Sniff
 {
 
@@ -32,7 +45,7 @@ class GoT_Sniffs_WhiteSpace_ScopeClosingBraceSniff implements PHP_CodeSniffer_Sn
     {
         return PHP_CodeSniffer_Tokens::$scopeOpeners;
 
-    }//end register()
+    }
 
 
     /**
@@ -55,7 +68,7 @@ class GoT_Sniffs_WhiteSpace_ScopeClosingBraceSniff implements PHP_CodeSniffer_Sn
             return;
         }
 
-        $scopeStart  = $tokens[$stack_ptr]['scope_opener'];
+        $scope_start  = $tokens[$stack_ptr]['scope_opener'];
         $scope_end    = $tokens[$stack_ptr]['scope_closer'];
 
         // If the scope closer doesn't think it belongs to this scope opener
@@ -91,14 +104,14 @@ class GoT_Sniffs_WhiteSpace_ScopeClosingBraceSniff implements PHP_CodeSniffer_Sn
         $start_column = $tokens[$line_start]['column'];
 
         // Check that the closing brace is on it's own line.
-        $lastContent = $php_cs_file->findPrevious(
+        $last_content = $php_cs_file->findPrevious(
             array(T_WHITESPACE),
             ($scope_end - 1),
-            $scopeStart,
+            $scope_start,
             TRUE
         );
 
-        if($tokens[$lastContent]['line'] === $tokens[$scope_end]['line'])
+        if($tokens[$last_content]['line'] === $tokens[$scope_end]['line'])
         {
             $error = 'Closing brace must be on a line by itself';
             $php_cs_file->addError($error, $scope_end, 'Line');
