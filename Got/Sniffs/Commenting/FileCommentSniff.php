@@ -7,7 +7,6 @@
  * @category PHP
  * @package  CodeSniffer
  * @author   Pierre Rambaud <pierre.rambaud86@gmail.com>
- * @author   Marc McIntyre <mmcintyre@squiz.net>
  * @license  http://matrix.squiz.net/developer/tools/php_cs/licence BSD Licence
  * @link     http://rambaudpierre.fr
  */
@@ -37,7 +36,6 @@ if(class_exists('PHP_CodeSniffer_CommentParser_ClassCommentParser', TRUE) === FA
  * @category PHP
  * @package  CodeSniffer
  * @author   Pierre Rambaud <pierre.rambaud86@gmail.com>
- * @author   Marc McIntyre <mmcintyre@squiz.net>
  * @license  http://matrix.squiz.net/developer/tools/php_cs/licence BSD Licence
  * @link     http://rambaudpierre.fr
  */
