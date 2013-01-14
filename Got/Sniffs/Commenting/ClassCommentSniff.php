@@ -17,11 +17,6 @@ if(class_exists('PHP_CodeSniffer_CommentParser_ClassCommentParser', TRUE) === FA
     throw new PHP_CodeSniffer_Exception('Class PHP_CodeSniffer_CommentParser_ClassCommentParser not found');
 }
 
-if(class_exists('PEAR_Sniffs_Commenting_FileCommentSniff', TRUE) === FALSE)
-{
-    throw new PHP_CodeSniffer_Exception('Class PEAR_Sniffs_Commenting_FileCommentSniff not found');
-}
-
 /**
  * Got_Sniffs_Commenting_ClassCommentSniff
  *

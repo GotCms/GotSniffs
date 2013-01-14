@@ -1,6 +1,6 @@
 <?php
 /**
- * Got_Sniffs_Commenting_FileCommentSniff
+ * GoT_Sniffs_ControlStructures_ControlSignatureSniff
  *
  * PHP version 5
  *

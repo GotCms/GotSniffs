@@ -1,6 +1,6 @@
 <?php
 /**
- * Got_Sniffs_Strings_ConcatenationSpacingSniff
+ * Got_Sniffs_Strings_DoubleQuoteUsageSniff
  *
  * PHP version 5
  *
@@ -12,7 +12,7 @@
  */
 
 /**
- * Got_Sniffs_Strings_ConcatenationSpacingSniff.
+ * Got_Sniffs_Strings_DoubleQuoteUsageSniff.
  *
  * PHP version 5
  *
@@ -111,7 +111,7 @@ class Got_Sniffs_Strings_DoubleQuoteUsageSniff implements PHP_CodeSniffer_Sniff
             }
         }
 
-        $error = "String $working_string does not require double quotes; use single quotes instead";
+        $error = 'String ' . $working_string . ' does not require double quotes; use single quotes instead';
         $php_cs_file->addError($error, $stack_ptra);
 
     }

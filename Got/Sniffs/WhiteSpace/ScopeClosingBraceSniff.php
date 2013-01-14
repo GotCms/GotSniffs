@@ -92,7 +92,7 @@ class GoT_Sniffs_WhiteSpace_ScopeClosingBraceSniff implements PHP_CodeSniffer_Sn
 
         // We found a new line, now go forward and find the first non-whitespace
         // token.
-        $line_start= $php_cs_file->findNext(
+        $line_start = $php_cs_file->findNext(
             array(T_WHITESPACE),
             ($line_start + 1),
             null,
