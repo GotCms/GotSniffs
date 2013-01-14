@@ -37,18 +37,18 @@ class Got_Sniffs_Strings_ConcatenationSpacingSniff implements PHP_CodeSniffer_Sn
     /**
     * Processes this test, when one of its tokens is encountered.
     *
-    * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-    * @param int $stackPtr The position of the current token in the
+    * @param PHP_CodeSniffer_File $php_cs_file The file being scanned.
+    * @param int $stack_ptr The position of the current token in the
     * stack passed in $tokens.
     *
     * @return void
     */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    public function process(PHP_CodeSniffer_File $php_cs_file, $stack_ptr)
     {
-        $tokens = $phpcsFile->getTokens();
-        if($tokens[($stackPtr - 1)]['code'] !== T_WHITESPACE or $tokens[($stackPtr + 1)]['code'] !== T_WHITESPACE)
+        $tokens = $php_cs_file->getTokens();
+        if($tokens[($stack_ptr - 1)]['code'] !== T_WHITESPACE or $tokens[($stack_ptr + 1)]['code'] !== T_WHITESPACE)
         {
-            $phpcsFile->addError('Concat operator must be surrounded by spaces', $stackPtr, 'Missing');
+            $php_cs_file->addError('Concat operator must be surrounded by spaces', $stack_ptr, 'Missing');
         }
     }
 }
