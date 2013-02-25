@@ -7,23 +7,24 @@
     <exclude-pattern>*.html</exclude-pattern>
     <exclude-pattern>*.js</exclude-pattern>
 
+    <!-- Use PSR2 -->
+    <rule ref="PSR2" />
+
+    <rule ref="Squiz.Classes.DuplicateProperty" />
+
+    <rule ref="Zend.Debug.CodeAnalyzer" />
+
     <!-- Include some sniffs from all around the place -->
     <rule ref="Generic.Functions.FunctionCallArgumentSpacing"/>
     <rule ref="Generic.Functions.OpeningFunctionBraceBsdAllman"/>
     <rule ref="Generic.PHP.DisallowShortOpenTag"/>
     <rule ref="Generic.WhiteSpace.DisallowTabIndent"/>
-    <rule ref="PEAR.Classes.ClassDeclaration"/>
-    <rule ref="PEAR.Functions.FunctionCallSignature"/>
-    <rule ref="PEAR.Functions.ValidDefaultValue"/>
-    <rule ref="Squiz.Functions.GlobalFunction"/>
-    <rule ref="Zend.Debug.CodeAnalyzer"/>
-    <rule ref="Zend.Files.ClosingTag"/>
-
-    <rule ref="PEAR.Functions.FunctionCallSignature.ContentAfterOpenBracket">
-        <severity>0</severity>
+    <rule ref="Generic/Sniffs/Classes/">
+        <exclude name="Generic.Classes.DuplicateClassName" />
     </rule>
-    <rule ref="PEAR.Functions.FunctionCallSignature.CloseBracketLine">
-        <severity>0</severity>
+    <rule ref="Generic/Sniffs/ControlStructures/" />
+    <rule ref="Generic/Sniffs/Formatting/">
+        <exclude name="Generic.Formatting.NoSpaceAfterCast" />
     </rule>
 
     <!-- Use Unix newlines -->
@@ -32,4 +33,26 @@
             <property name="eolChar" value="\n"/>
         </properties>
     </rule>
+
+    <rule ref="PEAR/Sniffs/Classes/" />
+    <rule ref="PEAR/Sniffs/Functions/">
+        <exclude name="PEAR.Functions.FunctionDeclaration" />
+    </rule>
+
+    <rule ref="PEAR.Commenting.InlineComment" />
+    <rule ref="PEAR.Commenting.FunctionComment" />
+    <rule ref="PEAR.Files.IncludingFile" />
+    <rule ref="PEAR.Functions.FunctionCallSignature"/>
+    <rule ref="PEAR.Functions.ValidDefaultValue"/>
+    <rule ref="PEAR.NamingConventions.ValidClassName" />
+    <rule ref="PEAR.WhiteSpace.ObjectOperatorIndent" />
+    <rule ref="PEAR.WhiteSpace.ScopeClosingBrace" />
+
+
+    <rule ref="Squiz.Functions.GlobalFunction"/>
+    <rule ref="Zend.Debug.CodeAnalyzer"/>
+    <rule ref="Zend.Files.ClosingTag"/>
+
+
+
 </ruleset>
