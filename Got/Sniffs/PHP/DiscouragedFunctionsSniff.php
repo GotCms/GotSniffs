@@ -6,7 +6,7 @@
  *
  * @category PHP
  * @package  CodeSniffer
- * @author   Pierre Rambaud <pierre.rambaud86@gmail.com>
+ * @author   Pierre Rambaud (GoT) http://rambaudpierre.fr
  * @license  http://matrix.squiz.net/developer/tools/php_cs/licence BSD Licence
  * @link     http://rambaudpierre.fr
  */
@@ -23,7 +23,7 @@ if(class_exists('Generic_Sniffs_PHP_ForbiddenFunctionsSniff', TRUE) === FALSE)
  *
  * @category PHP
  * @package  CodeSniffer
- * @author   Pierre Rambaud <pierre.rambaud86@gmail.com>
+ * @author   Pierre Rambaud (GoT) http://rambaudpierre.fr
  * @license  http://matrix.squiz.net/developer/tools/php_cs/licence BSD Licence
  * @link     http://rambaudpierre.fr
  */
