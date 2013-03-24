@@ -6,7 +6,7 @@
  *
  * @category PHP
  * @package  CodeSniffer
- * @author   Pierre Rambaud (GoT) http://rambaudpierre.fr
+ * @author   Pierre Rambaud (GoT) <pierre.rambaud86@gmail.com>
  * @license  http://matrix.squiz.net/developer/tools/php_cs/licence BSD Licence
  * @link     http://rambaudpierre.fr
  */
@@ -18,7 +18,7 @@
  *
  * @category PHP
  * @package  CodeSniffer
- * @author   Pierre Rambaud (GoT) http://rambaudpierre.fr
+ * @author   Pierre Rambaud (GoT) <pierre.rambaud86@gmail.com>
  * @license  http://matrix.squiz.net/developer/tools/php_cs/licence BSD Licence
  * @link     http://rambaudpierre.fr
  */
