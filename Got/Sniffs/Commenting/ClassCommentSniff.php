@@ -12,8 +12,7 @@
  * @link     http://rambaudpierre.fr
  */
 
-if(class_exists('PHP_CodeSniffer_CommentParser_ClassCommentParser', TRUE) === FALSE)
-{
+if (class_exists('PHP_CodeSniffer_CommentParser_ClassCommentParser', true) === false) {
     throw new PHP_CodeSniffer_Exception('Class PHP_CodeSniffer_CommentParser_ClassCommentParser not found');
 }
 
@@ -46,58 +45,58 @@ class Got_Sniffs_Commenting_ClassCommentSniff extends PEAR_Sniffs_Commenting_Cla
      */
     protected $tags = array(
         'category'   => array(
-            'required'       => FALSE,
-            'allow_multiple' => FALSE,
+            'required'       => false,
+            'allow_multiple' => false,
             'order_text'     => 'precedes @package',
         ),
         'package'    => array(
-            'required'       => TRUE,
-            'allow_multiple' => FALSE,
+            'required'       => true,
+            'allow_multiple' => false,
             'order_text'     => 'follows @category',
         ),
         'subpackage' => array(
-            'required'       => FALSE,
-            'allow_multiple' => FALSE,
+            'required'       => false,
+            'allow_multiple' => false,
             'order_text'     => 'follows @package',
         ),
         'author'     => array(
-            'required'       => FALSE,
-            'allow_multiple' => TRUE,
+            'required'       => false,
+            'allow_multiple' => true,
             'order_text'     => 'follows @subpackage (if used) or @package',
         ),
         'copyright'  => array(
-            'required'       => FALSE,
-            'allow_multiple' => TRUE,
+            'required'       => false,
+            'allow_multiple' => true,
             'order_text'     => 'follows @author',
         ),
         'license'    => array(
-            'required'       => FALSE,
-            'allow_multiple' => FALSE,
+            'required'       => false,
+            'allow_multiple' => false,
             'order_text'     => 'follows @copyright (if used) or @author',
         ),
         'version'    => array(
-            'required'       => FALSE,
-            'allow_multiple' => FALSE,
+            'required'       => false,
+            'allow_multiple' => false,
             'order_text'     => 'follows @license',
         ),
         'link'       => array(
-            'required'       => FALSE,
-            'allow_multiple' => TRUE,
+            'required'       => false,
+            'allow_multiple' => true,
             'order_text'     => 'follows @version',
         ),
         'see'        => array(
-            'required'       => FALSE,
-            'allow_multiple' => TRUE,
+            'required'       => false,
+            'allow_multiple' => true,
             'order_text'     => 'follows @link',
         ),
         'since'      => array(
-            'required'       => FALSE,
-            'allow_multiple' => FALSE,
+            'required'       => false,
+            'allow_multiple' => false,
             'order_text'     => 'follows @see (if used) or @link',
         ),
         'deprecated' => array(
-            'required'       => FALSE,
-            'allow_multiple' => FALSE,
+            'required'       => false,
+            'allow_multiple' => false,
             'order_text'     => 'follows @since (if used) or @see (if used) or @link',
         ),
     );

@@ -11,8 +11,7 @@
  * @link     http://rambaudpierre.fr
  */
 
-if(class_exists('PHP_CodeSniffer_CommentParser_ClassCommentParser', TRUE) === FALSE)
-{
+if (class_exists('PHP_CodeSniffer_CommentParser_ClassCommentParser', true) === false) {
     throw new PHP_CodeSniffer_Exception('Class PHP_CodeSniffer_CommentParser_ClassCommentParser not found');
 }
 
@@ -49,58 +48,58 @@ class Got_Sniffs_Commenting_FileCommentSniff extends PEAR_Sniffs_Commenting_File
      */
     protected $tags = array(
         'category'   => array(
-            'required'       => TRUE,
-            'allow_multiple' => FALSE,
+            'required'       => true,
+            'allow_multiple' => false,
             'order_text'     => 'precedes @package',
         ),
         'package'    => array(
-            'required'       => TRUE,
-            'allow_multiple' => FALSE,
+            'required'       => true,
+            'allow_multiple' => false,
             'order_text'     => 'follows @category',
         ),
         'subpackage' => array(
-            'required'       => FALSE,
-            'allow_multiple' => FALSE,
+            'required'       => false,
+            'allow_multiple' => false,
             'order_text'     => 'follows @package',
         ),
         'author'     => array(
-            'required'       => TRUE,
-            'allow_multiple' => TRUE,
+            'required'       => true,
+            'allow_multiple' => true,
             'order_text'     => 'follows @subpackage (if used) or @package',
         ),
         'copyright'  => array(
-            'required'       => FALSE,
-            'allow_multiple' => TRUE,
+            'required'       => false,
+            'allow_multiple' => true,
             'order_text'     => 'follows @author',
         ),
         'license'    => array(
-            'required'       => TRUE,
-            'allow_multiple' => FALSE,
+            'required'       => true,
+            'allow_multiple' => false,
             'order_text'     => 'follows @copyright (if used) or @author',
         ),
         'version'    => array(
-            'required'       => FALSE,
-            'allow_multiple' => FALSE,
+            'required'       => false,
+            'allow_multiple' => false,
             'order_text'     => 'follows @license',
         ),
         'link'       => array(
-            'required'       => TRUE,
-            'allow_multiple' => TRUE,
+            'required'       => true,
+            'allow_multiple' => true,
             'order_text'     => 'follows @version (if used) or @license',
         ),
         'see'        => array(
-            'required'       => FALSE,
-            'allow_multiple' => TRUE,
+            'required'       => false,
+            'allow_multiple' => true,
             'order_text'     => 'follows @link',
         ),
         'since'      => array(
-            'required'       => FALSE,
-            'allow_multiple' => FALSE,
+            'required'       => false,
+            'allow_multiple' => false,
             'order_text'     => 'follows @see (if used) or @link',
         ),
         'deprecated' => array(
-            'required'       => FALSE,
-            'allow_multiple' => FALSE,
+            'required'       => false,
+            'allow_multiple' => false,
             'order_text'     => 'follows @since (if used) or @see (if used) or @link',
         ),
     );
@@ -108,20 +107,19 @@ class Got_Sniffs_Commenting_FileCommentSniff extends PEAR_Sniffs_Commenting_File
     /**
      * Process the version tag.
      *
-     * @param int $error_pos The line number where the error occurs.
+     * @param int $errorPos The line number where the error occurs.
+     *
      * @return void
      */
-    protected function processVersion($error_pos)
+    protected function processVersion($errorPos)
     {
         $version = $this->commentParser->getVersion();
-        if($version !== NULL)
-        {
+        if ($version !== null) {
             $content = $version->getContent();
             $matches = array();
-            if(empty($content) === TRUE)
-            {
+            if (empty($content) === true) {
                 $error = 'Content missing for @version tag in file comment';
-                $this->currentFile->addError($error, $error_pos);
+                $this->currentFile->addError($error, $errorPos);
             }
         }
     }

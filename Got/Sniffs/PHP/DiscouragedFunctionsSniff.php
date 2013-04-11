@@ -11,8 +11,7 @@
  * @link     http://rambaudpierre.fr
  */
 
-if(class_exists('Generic_Sniffs_PHP_ForbiddenFunctionsSniff', TRUE) === FALSE)
-{
+if (class_exists('Generic_Sniffs_PHP_ForbiddenFunctionsSniff', true) === false) {
     throw new PHP_CodeSniffer_Exception('Class Generic_Sniffs_PHP_ForbiddenFunctionsSniff not found');
 }
 
@@ -34,19 +33,19 @@ class Got_Sniffs_PHP_DiscouragedFunctionsSniff extends Generic_Sniffs_PHP_Forbid
     /**
      * A list of forbidden functions with their alternatives.
      *
-     * The value is NULL if no alternative exists. IE, the
+     * The value is null if no alternative exists. IE, the
      * function should just not be used.
      *
-     * @var array(string => string|NULL)
+     * @var array(string => string|null)
      */
     protected $forbiddenFunctions = array(
-         'error_log'                => NULL,
-         'split'                    => NULL,
-         'spliti'                   => NULL,
-         'define_syslog_variables'  => NULL,
-         'dl'                       => NULL,
-         'sql_regcase'              => NULL,
-         'ereg'                     => NULL,
+         'error_log'                => null,
+         'split'                    => null,
+         'spliti'                   => null,
+         'define_syslog_variables'  => null,
+         'dl'                       => null,
+         'sql_regcase'              => null,
+         'ereg'                     => null,
          'ereg_replace'             => 'preg_replace',
          'eregi_replace'            => 'preg_replace',
          'call_user_method'         => 'call_user_func',
@@ -67,6 +66,6 @@ class Got_Sniffs_PHP_DiscouragedFunctionsSniff extends Generic_Sniffs_PHP_Forbid
      *
      * @var bool
      */
-    public $error = TRUE;
+    public $error = true;
 
 }

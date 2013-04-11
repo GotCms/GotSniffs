@@ -33,18 +33,6 @@ if (class_exists('PHP_CodeSniffer_Standards_AbstractVariableSniff', true) === fa
  */
 class Got_Sniffs_NamingConventions_ValidVariableNameSniff extends PHP_CodeSniffer_Standards_AbstractVariableSniff
 {
-
-    /**
-     * Tokens to ignore so that we can find a DOUBLE_COLON.
-     *
-     * @var array
-     */
-    private $_ignore = array(
-                        T_WHITESPACE,
-                        T_COMMENT,
-                       );
-
-
     /**
      * Processes this test, when one of its tokens is encountered.
      *
@@ -99,7 +87,7 @@ class Got_Sniffs_NamingConventions_ValidVariableNameSniff extends PHP_CodeSniffe
                         $error = 'Variable "%s" is not in valid camel caps format';
                         $data  = array($originalVarName);
                         $phpcsFile->addError($error, $var, 'NotCamelCaps', $data);
-                    } else if (preg_match('|\d|', $objVarName)) {
+                    } elseif (preg_match('|\d|', $objVarName)) {
                         $warning = 'Variable "%s" contains numbers but this is discouraged';
                         $data    = array($originalVarName);
                         $phpcsFile->addWarning($warning, $stackPtr, 'ContainsNumbers', $data);
@@ -131,7 +119,7 @@ class Got_Sniffs_NamingConventions_ValidVariableNameSniff extends PHP_CodeSniffe
             $error = 'Variable "%s" is not in valid camel caps format';
             $data  = array($originalVarName);
             $phpcsFile->addError($error, $stackPtr, 'NotCamelCaps', $data);
-        } else if (preg_match('|\d|', $varName)) {
+        } elseif (preg_match('|\d|', $varName)) {
             $warning = 'Variable "%s" contains numbers but this is discouraged';
             $data    = array($originalVarName);
             $phpcsFile->addWarning($warning, $stackPtr, 'ContainsNumbers', $data);
@@ -156,34 +144,23 @@ class Got_Sniffs_NamingConventions_ValidVariableNameSniff extends PHP_CodeSniffe
         $memberProps = $phpcsFile->getMemberProperties($stackPtr);
         $public      = ($memberProps['scope'] === 'public');
 
-        if ($public === true) {
-            if (substr($varName, 0, 1) === '_') {
-                $error = 'Public member variable "%s" must not contain a leading underscore';
-                $data  = array($varName);
-                $phpcsFile->addError($error, $stackPtr, 'PublicHasUnderscore', $data);
-                return;
-            }
-        } else {
-            if (substr($varName, 0, 1) !== '_') {
-                $scope = ucfirst($memberProps['scope']);
-                $error = '%s member variable "%s" must contain a leading underscore';
-                $data  = array(
-                          $scope,
-                          $varName,
-                         );
-                $phpcsFile->addError($error, $stackPtr, 'PrivateNoUnderscore', $data);
-                return;
-            }
+        if (substr($varName, 0, 1) === '_') {
+            $error = 'Member variable "%s" must not contain a leading underscore';
+            $data  = array($varName);
+            $phpcsFile->addError($error, $stackPtr, 'PublicHasUnderscore', $data);
+            return;
         }
 
-        if (PHP_CodeSniffer::isCamelCaps($varName, false, $public, false) === false) {
-            $error = 'Variable "%s" is not in valid camel caps format';
-            $data  = array($varName);
-            $phpcsFile->addError($error, $stackPtr, 'MemberVarNotCamelCaps', $data);
-        } else if (preg_match('|\d|', $varName)) {
-            $warning = 'Variable "%s" contains numbers but this is discouraged';
-            $data    = array($varName);
-            $phpcsFile->addWarning($warning, $stackPtr, 'MemberVarContainsNumbers', $data);
+        if (!preg_match('~^[a-z]+$~', $varName)) {
+            if (PHP_CodeSniffer::isCamelCaps($varName, false, true, true) === false) {
+                $error = 'Variable "%s" is not in valid camel caps format';
+                $data  = array($varName);
+                $phpcsFile->addError($error, $stackPtr, 'MemberVarNotCamelCaps', $data);
+            } elseif (preg_match('|\d|', $varName)) {
+                $warning = 'Variable "%s" contains numbers but this is discouraged';
+                $data    = array($varName);
+                $phpcsFile->addWarning($warning, $stackPtr, 'MemberVarContainsNumbers', $data);
+            }
         }
 
     }//end processMemberVar()
@@ -214,7 +191,12 @@ class Got_Sniffs_NamingConventions_ValidVariableNameSniff extends PHP_CodeSniffe
                             'GLOBALS',
                            );
 
-        if (preg_match_all('|[^\\\]\$([a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*)|', $tokens[$stackPtr]['content'], $matches) !== 0) {
+        if (preg_match_all(
+            '|[^\\\]\$([a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*)|',
+            $tokens[$stackPtr]['content'],
+            $matches
+        ) !== 0
+        ) {
             foreach ($matches[1] as $varName) {
                 // If it's a php reserved var, then its ok.
                 if (in_array($varName, $phpReservedVars) === true) {
@@ -236,17 +218,12 @@ class Got_Sniffs_NamingConventions_ValidVariableNameSniff extends PHP_CodeSniffe
                     $error   = 'Variable "%s" is not in valid camel caps format';
                     $data    = array($originalVarName);
                     $phpcsFile->addError($error, $stackPtr, 'StringVarNotCamelCaps', $data);
-                } else if (preg_match('|\d|', $varName)) {
+                } elseif (preg_match('|\d|', $varName)) {
                     $warning = 'Variable "%s" contains numbers but this is discouraged';
                     $data    = array($originalVarName);
                     $phpcsFile->addWarning($warning, $stackPtr, 'StringVarContainsNumbers', $data);
                 }
             }
-        }//end if
-
-    }//end processVariableInString()
-
-
-}//end class
-
-?>
+        }
+    }
+}
