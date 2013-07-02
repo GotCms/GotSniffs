@@ -11,6 +11,11 @@
  * @link     http://rambaudpierre.fr
  */
 
+namespace Got\Sniffs\Strings;
+
+use PHP_CodeSniffer_Sniff;
+use PHP_CodeSniffer_File;
+
 /**
  * Got_Sniffs_Strings_ConcatenationSpacingSniff.
  *
@@ -22,7 +27,7 @@
  * @license  http://matrix.squiz.net/developer/tools/php_cs/licence BSD Licence
  * @link     http://rambaudpierre.fr
  */
-class Got_Sniffs_Strings_ConcatenationSpacingSniff implements PHP_CodeSniffer_Sniff
+class ConcatenationSpacingSniff implements PHP_CodeSniffer_Sniff
 {
     /**
     * Returns an array of tokens this test wants to listen for.

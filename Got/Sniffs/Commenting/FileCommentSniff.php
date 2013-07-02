@@ -11,9 +11,9 @@
  * @link     http://rambaudpierre.fr
  */
 
-if (class_exists('PHP_CodeSniffer_CommentParser_ClassCommentParser', true) === false) {
-    throw new PHP_CodeSniffer_Exception('Class PHP_CodeSniffer_CommentParser_ClassCommentParser not found');
-}
+namespace Got\Sniffs\Commenting;
+
+use PEAR_Sniffs_Commenting_FileCommentSniff;
 
 /**
  * Got_Sniffs_Commenting_FileCommentSniff
@@ -39,7 +39,7 @@ if (class_exists('PHP_CodeSniffer_CommentParser_ClassCommentParser', true) === f
  * @link     http://rambaudpierre.fr
  */
 
-class Got_Sniffs_Commenting_FileCommentSniff extends PEAR_Sniffs_Commenting_FileCommentSniff
+class FileCommentSniff extends PEAR_Sniffs_Commenting_FileCommentSniff
 {
     /**
      * Tags in correct order and related info.

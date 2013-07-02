@@ -11,9 +11,9 @@
  * @link     http://rambaudpierre.fr
  */
 
-if (class_exists('Generic_Sniffs_PHP_ForbiddenFunctionsSniff', true) === false) {
-    throw new PHP_CodeSniffer_Exception('Class Generic_Sniffs_PHP_ForbiddenFunctionsSniff not found');
-}
+namespace Got\Sniffs\PHP;
+
+use Generic_Sniffs_PHP_ForbiddenFunctionsSniff;
 
 /**
  * Got_Sniffs_PHP_DiscouragedFunctionsSniff.
@@ -27,7 +27,7 @@ if (class_exists('Generic_Sniffs_PHP_ForbiddenFunctionsSniff', true) === false) 
  * @link     http://rambaudpierre.fr
  */
 
-class Got_Sniffs_PHP_DiscouragedFunctionsSniff extends Generic_Sniffs_PHP_ForbiddenFunctionsSniff
+class DiscouragedFunctionsSniff extends Generic_Sniffs_PHP_ForbiddenFunctionsSniff
 {
 
     /**
@@ -67,5 +67,4 @@ class Got_Sniffs_PHP_DiscouragedFunctionsSniff extends Generic_Sniffs_PHP_Forbid
      * @var bool
      */
     public $error = true;
-
 }

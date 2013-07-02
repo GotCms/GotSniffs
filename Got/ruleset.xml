@@ -17,6 +17,9 @@
             <property name="eolChar" value="\n"/>
         </properties>
     </rule>
+    <rule ref="Generic/Sniffs/NamingConventions/">
+        <exclude name="Generic.NamingConventions.CamelCapsFunctionName" />
+    </rule>
     <rule ref="Generic.Functions.FunctionCallArgumentSpacing"/>
     <rule ref="Generic.PHP.DisallowShortOpenTag"/>
     <rule ref="Generic/Sniffs/Classes/">

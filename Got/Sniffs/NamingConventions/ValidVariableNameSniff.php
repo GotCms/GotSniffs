@@ -13,9 +13,11 @@
  * @link      http://pear.php.net/package/PHP_CodeSniffer
  */
 
-if (class_exists('PHP_CodeSniffer_Standards_AbstractVariableSniff', true) === false) {
-    throw new PHP_CodeSniffer_Exception('Class PHP_CodeSniffer_Standards_AbstractVariableSniff not found');
-}
+namespace Got\Sniffs\NamingConventions;
+
+use PHP_CodeSniffer;
+use PHP_CodeSniffer_File;
+use PHP_CodeSniffer_Standards_AbstractVariableSniff;
 
 /**
  * Squiz_Sniffs_NamingConventions_ValidVariableNameSniff.
@@ -31,7 +33,7 @@ if (class_exists('PHP_CodeSniffer_Standards_AbstractVariableSniff', true) === fa
  * @version   Release: 1.4.4
  * @link      http://pear.php.net/package/PHP_CodeSniffer
  */
-class Got_Sniffs_NamingConventions_ValidVariableNameSniff extends PHP_CodeSniffer_Standards_AbstractVariableSniff
+class ValidVariableNameSniff extends PHP_CodeSniffer_Standards_AbstractVariableSniff
 {
     /**
      * Processes this test, when one of its tokens is encountered.
