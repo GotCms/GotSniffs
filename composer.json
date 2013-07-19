@@ -1,0 +1,16 @@
+{
+    "name": "pierrerambaud/gotsniffs",
+    "description": "PHPCodeSniffer standard used for GotCms.",
+    "license": "LGPL-3.0",
+    "authors": [
+        {
+            "name": "Pierre RAMBAUD",
+            "email": "pierre.rambaud86@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.3.3",
+        "squizlabs/php_codesniffer": "1.4.*"
+    }
+}
