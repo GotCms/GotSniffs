@@ -1,5 +1,5 @@
 {
-    "name": "pierrerambaud/gotsniffs",
+    "name": "gotcms/gotsniffs",
     "description": "PHPCodeSniffer standard used for GotCms.",
     "license": "LGPL-3.0",
     "authors": [
