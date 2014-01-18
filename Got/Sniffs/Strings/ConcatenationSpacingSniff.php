@@ -8,7 +8,7 @@
  * @package  CodeSniffer
  * @author   Pierre Rambaud (GoT) <pierre.rambaud86@gmail.com>
  * @license  http://matrix.squiz.net/developer/tools/php_cs/licence BSD Licence
- * @link     http://rambaudpierre.fr
+ * @link     http://pierrerambaud.com
  */
 
 namespace Got\Sniffs\Strings;
@@ -25,7 +25,7 @@ use PHP_CodeSniffer_File;
  * @package  CodeSniffer
  * @author   Pierre Rambaud (GoT) <pierre.rambaud86@gmail.com>
  * @license  http://matrix.squiz.net/developer/tools/php_cs/licence BSD Licence
- * @link     http://rambaudpierre.fr
+ * @link     http://pierrerambaud.com
  */
 class ConcatenationSpacingSniff implements PHP_CodeSniffer_Sniff
 {

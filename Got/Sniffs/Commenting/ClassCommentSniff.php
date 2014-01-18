@@ -9,7 +9,7 @@
  * @package  CodeSniffer
  * @author   Pierre Rambaud (GoT) <pierre.rambaud86@gmail.com>
  * @license  http://matrix.squiz.net/developer/tools/php_cs/licence BSD Licence
- * @link     http://rambaudpierre.fr
+ * @link     http://pierrerambaud.com
  */
 
 namespace Got\Sniffs\Commenting;
@@ -34,7 +34,7 @@ use PEAR_Sniffs_Commenting_ClassCommentSniff;
  * @package  CodeSniffer
  * @author   Pierre Rambaud (GoT) <pierre.rambaud86@gmail.com>
  * @license  http://matrix.squiz.net/developer/tools/php_cs/licence BSD Licence
- * @link     http://rambaudpierre.fr
+ * @link     http://pierrerambaud.com
  */
 class ClassCommentSniff extends PEAR_Sniffs_Commenting_ClassCommentSniff
 {

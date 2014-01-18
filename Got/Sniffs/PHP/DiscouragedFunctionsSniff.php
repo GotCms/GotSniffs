@@ -8,7 +8,7 @@
  * @package  CodeSniffer
  * @author   Pierre Rambaud (GoT) <pierre.rambaud86@gmail.com>
  * @license  http://matrix.squiz.net/developer/tools/php_cs/licence BSD Licence
- * @link     http://rambaudpierre.fr
+ * @link     http://pierrerambaud.com
  */
 
 namespace Got\Sniffs\PHP;
@@ -24,7 +24,7 @@ use Generic_Sniffs_PHP_ForbiddenFunctionsSniff;
  * @package  CodeSniffer
  * @author   Pierre Rambaud (GoT) <pierre.rambaud86@gmail.com>
  * @license  http://matrix.squiz.net/developer/tools/php_cs/licence BSD Licence
- * @link     http://rambaudpierre.fr
+ * @link     http://pierrerambaud.com
  */
 
 class DiscouragedFunctionsSniff extends Generic_Sniffs_PHP_ForbiddenFunctionsSniff
